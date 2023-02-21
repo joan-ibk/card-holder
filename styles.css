@@ -1,0 +1,274 @@
+
+:root {
+    --Red: hsl(0, 100%, 66%);
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+}
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+      min-height: 100vh;
+}
+.hidden{
+    display: none;
+}
+.error{
+    border: 2px solid var(--Red);
+}
+.error_message{
+    gap: 0;
+}
+.error_message::after{
+    content:"can't be blank";
+    color: var(--Red);
+    margin-top: .2rem;
+}
+.container{
+    display: flex;
+    align-items: center;
+}
+.left-section{
+    min-height: 100vh;
+    width: 40%;
+    background-image: url(./images/bg-main-desktop.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.cards{
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    left: 100%;
+    transform: translate(-50%,-50%);
+}
+.front-card{
+    position: relative;
+    transform: translateX(-100px);
+}
+.card-logo{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+#card_no{
+    position: absolute;
+    color: var(--White);
+    bottom: 5rem;
+    left: 1rem;
+    letter-spacing: 2px;
+    font-family: 'Space Grotesk';
+    font-weight: 500;
+}
+.card-information{
+    position: absolute;
+    bottom: 2rem;
+    left: 1rem;
+    right: 3rem;
+    display: flex;
+    color: var(--White);
+    justify-content:space-between ;
+    
+}
+.back-card{
+    position: relative;
+}
+#cvc{
+    position: absolute;
+    right: 3.5rem;
+    top: 7rem;
+    color: var(--White);
+    font-family: 'Space Grotesk';
+    font-weight: 500;
+    font-size: .7rem;
+}
+.right-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.right-section form{
+    display: grid;
+    grid: 1rem;
+    width: 350px;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,1fr);
+
+}
+label{
+    /* color: var(--Very-dark-violet); */
+    margin-bottom: .3rem;
+    text-transform: uppercase;
+    font-size: 11px;
+    /* font-family: 'Space Grotest'; */
+}
+input{
+    padding: .5rem;
+    font-size: 11px;
+    border: 2px solid var(--Light-grayish-violet);
+    border-radius: 4px;
+}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+input::placeholder{
+    font-family: inherit;
+    color: var(--Dark-grayish-violet);
+    /* color: var(--Light-grayish-violet); */
+}
+input:focus{
+    outline-color: rgb(18, 36, 80);
+}
+.grid-1{
+    display:flex;
+    flex-direction: column;
+    grid-column: 2 span;
+    font-family: 'Space Grotesk';
+    font-weight: 500;
+    color: var(--Very-dark-violet);
+}
+.grid-2{
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 span;
+    font-family: 'Space Grotesk';
+    font-weight: 500;
+    color: var(--Very-dark-violet);
+}
+.grid-3{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Space Grotesk';
+    font-weight: 500;
+}
+.grid-4{
+    display: flex;
+    flex-direction: column;
+    grid-column:1 span;
+    font-family: 'Space Grotesk';
+    font-weight: 500;
+}
+.card-info{
+    display: flex;
+    grid-column: 2 span;
+    gap: 1rem;
+}
+#card-date{
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 span;
+    font-family: 'Space Grotesk';
+    font-weight: 500;
+    width: 50%;
+}
+#card-date .two-input{
+    display: flex;
+}
+
+.two-input div{
+    flex-direction: column;
+}
+#card-date div input{
+    width: 70px;
+    margin-inline: .5rem;
+    margin-left: 0;
+}
+#card-cvc{
+    width: 100%;
+}
+form button{
+    grid-column: 2 span;
+    font-size: 16px;
+    height: 50px;
+    color: var(--White);
+    border-radius: 6px;
+    background-color: var(--Very-dark-violet);
+    cursor: pointer;
+    margin-top: .5rem;
+    font-family: 'Space Grotesk';
+    font-weight: 500;
+
+}
+.thank{
+    width:350px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.thank h1{
+    text-transform: uppercase;
+    letter-spacing: 3x;
+}
+.thank p{
+    font-size: 18px;
+    color: var(--Dark-grayish-violet);
+}
+.thank button{
+    color: var(--White);
+    width: 100%;
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: 1px;
+    background-color: var(--Very-dark-violet);
+    cursor: pointer;
+}
+
+@media screen and (max-width:758px) {
+    .front-card,.front-card img,.back-card,.back-card img{
+        width:260px;
+    }
+    .card_container .card-logo{
+        width: 50px;
+    }
+    #card_no{
+        font-size: 1.1rem;
+    }
+    #cvc{
+        top:42% ;
+        right: 12%;
+    }
+    .container {
+        flex-direction: column
+    }
+    .left-section{
+        width: 100%;
+        min-height: 30vh;
+        background-image: url(./images/bg-main-mobile.png);
+        
+    }
+    .cards{
+        flex-direction: column-reverse;
+        /* position: relative; */
+        left:61%;
+        top: 50%;
+        gap: 0;
+    }
+    .back-card{
+        transform: translateY(70px);
+        right: 10px;
+    }
+    .front-card{
+        z-index: 100;
+        left: 35px;
+    }
+    .right-section{
+        margin-top: 6rem;
+    }
+
+   
+    
+}
